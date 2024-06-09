@@ -1,0 +1,10 @@
+<h2>List of movies</h2>
+<p><button (click)="addFilter(fliterCat.value)">Filter</button><input #fliterCat/></p>
+<ul>
+    <li *ngFor="let movie of movies">
+        <button title="Add to cart" (click)="addToCart(movie)">Add to cart</button>
+        &nbsp;<span>{{movie.title}}</span>
+        &nbsp;<span>{{movie.releaseYear}}</span>
+        &nbsp;<span>{{movie.director}}</span>
+    </li>
+</ul>
