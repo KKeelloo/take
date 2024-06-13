@@ -1,0 +1,10 @@
+<p>Shopping cart of client: {{shoppingCart.clientId}}</p>
+<ul>
+    <li *ngFor="let movie of shoppingCart.movies">
+        <button title="Delete" (click)="deleteMovie(movie)">Remove from cart</button>
+        &nbsp;<span>{{movie.title}}</span>
+        &nbsp;<span>{{movie.releaseYear}}</span>
+        &nbsp;<span>{{movie.director}}</span>
+    </li>
+</ul>
+<p>Total price: {{shoppingCart.sumPrice}}</p>

@@ -1,0 +1,9 @@
+<div *ngIf="movie">
+    <h2>{{movie.title}} details</h2>
+    <p>Relase year: {{movie.releaseYear}}</p>
+    <p>Director: {{movie.director}}</p>
+    <p>Genre: {{movie.genre}}</p>
+    <p>Description: {{movie.description}}</p>
+    <p>Price: {{movie.price}}</p>
+    <button (click)="goBack()">Back</button>
+</div>

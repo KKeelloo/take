@@ -6,11 +6,16 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MoviesService } from './movies.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CartsService } from './carts.service';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
+    ShoppingCartComponent,
+    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     provideClientHydration(),
-    MoviesService
+    MoviesService,
+    CartsService
   ],
   bootstrap: [AppComponent]
 })

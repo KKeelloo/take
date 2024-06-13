@@ -12,7 +12,7 @@ public class ShoppingCart {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Movie> movies;
 
     @NotNull

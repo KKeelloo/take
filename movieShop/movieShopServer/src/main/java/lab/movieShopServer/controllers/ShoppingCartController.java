@@ -21,11 +21,13 @@ public class ShoppingCartController {
 
     @GetMapping()
     public ShoppingCart getShoppingCart(@RequestParam("clientId") Long clientId) {
+
         ShoppingCart cart = shoppingCartRepository.findCart(clientId);
         if(cart == null){
             cart = new ShoppingCart();
             cart.setClientId(clientId);
             cart.setStatus("open");
+            cart.setMovies(new ArrayList<>());
             shoppingCartRepository.save(cart);
         }
         return cart;
@@ -40,6 +42,7 @@ public class ShoppingCartController {
             cart.setStatus("open");
             cart.setMovies(new ArrayList<>());
         }
+        System.out.println("wtf");
         List<Movie> movies = cart.getMovies();
         movies.add(movie);
         cart.setMovies(movies);

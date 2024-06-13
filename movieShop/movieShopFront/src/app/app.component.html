@@ -1,2 +1,7 @@
 <h1>{{title}}</h1>
-<app-movies></app-movies>
+<p>Your client ID<input #clientId type="number" (change)="setClientID(clientId.value)" [defaultValue]="0" min="0"/></p>
+<nav>
+    <a routerLink="/movies">Movies</a>&nbsp;
+    <a routerLink="/shoppingCart">Cart</a>&nbsp;
+</nav>   
+<router-outlet></router-outlet>

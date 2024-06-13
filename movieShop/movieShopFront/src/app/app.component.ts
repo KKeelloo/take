@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartsService } from './carts.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Movie Shop';
+  constructor(private cartsService: CartsService){}
+  
+  setClientID(clientId: string){
+    if (clientId.length == 0)
+      clientId = "0";
+    this.cartsService.setClientID(+clientId);
+  }
 }

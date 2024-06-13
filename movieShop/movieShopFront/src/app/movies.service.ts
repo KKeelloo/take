@@ -16,4 +16,8 @@ export class MoviesService {
   getMovies(filter: string): Observable<Movie[]>{
     return this.http.get<Movie[]>(this.moviesApiUrl + '?genre=' + filter);
   }
+  
+  getMovie(movie: string){
+    return this.http.get<Movie>(this.moviesApiUrl + '/'+movie);
+  }
 }
